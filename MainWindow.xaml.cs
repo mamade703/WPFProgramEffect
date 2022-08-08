@@ -22,7 +22,7 @@ namespace WPFProgramEffect
     {
         public MainWindow()
         {
-           InitializeComponent();
+            InitializeComponent();
         }
     }
 }
