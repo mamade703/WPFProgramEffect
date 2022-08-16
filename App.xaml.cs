@@ -9,6 +9,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using WPFProgramEffect.Service;
 
 namespace WPFProgramEffect
 {
@@ -81,12 +82,12 @@ namespace WPFProgramEffect
         {
             containerRegistry.RegisterInstance<ILogger>(_logger);
 
-
+            containerRegistry.Register<ICourseService, CourseService>();
         }
 
         protected override Window CreateShell()
         {
-            throw new NotImplementedException();
+            return Container.Resolve<MainWindow>();
         }
     }
 }

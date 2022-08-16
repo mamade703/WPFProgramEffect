@@ -68,6 +68,30 @@
     <Reference Include="Serilog.Sinks.File, Version=5.0.0.0, Culture=neutral, PublicKeyToken=24c2f752a8e58a10, processorArchitecture=MSIL">
       <HintPath>packages\Serilog.Sinks.File.5.0.0\lib\net45\Serilog.Sinks.File.dll</HintPath>
     </Reference>
+    <Reference Include="SharpVectors.Converters.Wpf, Version=1.8.0.0, Culture=neutral, PublicKeyToken=b532964b8548be77, processorArchitecture=MSIL">
+      <HintPath>packages\SharpVectors.1.8.0\lib\net45\SharpVectors.Converters.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpVectors.Core, Version=1.8.0.0, Culture=neutral, PublicKeyToken=7407205e337c98ef, processorArchitecture=MSIL">
+      <HintPath>packages\SharpVectors.1.8.0\lib\net45\SharpVectors.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpVectors.Css, Version=1.8.0.0, Culture=neutral, PublicKeyToken=7a46e3f532fdb787, processorArchitecture=MSIL">
+      <HintPath>packages\SharpVectors.1.8.0\lib\net45\SharpVectors.Css.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpVectors.Dom, Version=1.8.0.0, Culture=neutral, PublicKeyToken=517340b6277b1a7a, processorArchitecture=MSIL">
+      <HintPath>packages\SharpVectors.1.8.0\lib\net45\SharpVectors.Dom.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpVectors.Model, Version=1.8.0.0, Culture=neutral, PublicKeyToken=2236cfc76b505845, processorArchitecture=MSIL">
+      <HintPath>packages\SharpVectors.1.8.0\lib\net45\SharpVectors.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpVectors.Rendering.Gdi, Version=1.8.0.0, Culture=neutral, PublicKeyToken=03902092284347e3, processorArchitecture=MSIL">
+      <HintPath>packages\SharpVectors.1.8.0\lib\net45\SharpVectors.Rendering.Gdi.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpVectors.Rendering.Wpf, Version=1.8.0.0, Culture=neutral, PublicKeyToken=d0902381100df30e, processorArchitecture=MSIL">
+      <HintPath>packages\SharpVectors.1.8.0\lib\net45\SharpVectors.Rendering.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpVectors.Runtime.Wpf, Version=1.8.0.0, Culture=neutral, PublicKeyToken=d16e717f0a981fb9, processorArchitecture=MSIL">
+      <HintPath>packages\SharpVectors.1.8.0\lib\net45\SharpVectors.Runtime.Wpf.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -92,6 +116,9 @@
     <Reference Include="WindowsBase" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
+    <Reference Include="WpfAnimatedGif, Version=2.0.0.0, Culture=neutral, PublicKeyToken=9e7cd3b544a090dc, processorArchitecture=MSIL">
+      <HintPath>packages\WpfAnimatedGif.2.0.2\lib\net40\WpfAnimatedGif.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -151,6 +178,23 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Image\loading.gif" />
+    <Resource Include="Image\message.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\message.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\flower.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\fish.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\loading2.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
