@@ -10,6 +10,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using WPFProgramEffect.Service;
+using WPFProgramEffect.Views;
 
 namespace WPFProgramEffect
 {
@@ -44,6 +45,8 @@ namespace WPFProgramEffect
 
             var obj = new { Name = "刘", Role = ".net " };
             _logger.Debug("输出{@obj}",obj);
+
+            this.ShutdownMode = ShutdownMode.OnMainWindowClose;
 
         }
         /// <summary>
@@ -83,6 +86,10 @@ namespace WPFProgramEffect
             containerRegistry.RegisterInstance<ILogger>(_logger);
 
             containerRegistry.Register<ICourseService, CourseService>();
+            //containerRegistry.RegisterSingleton<ICourseService, CourseService>();
+
+            containerRegistry.Register<TransparentWindow>();
+            containerRegistry.Register<TransparentChromeWindow>();
         }
 
         protected override Window CreateShell()

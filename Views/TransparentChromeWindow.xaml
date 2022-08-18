@@ -1,0 +1,37 @@
+﻿<Window x:Class="WPFProgramEffect.Views.TransparentChromeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFProgramEffect.Views"
+        mc:Ignorable="d"
+       
+        WindowStyle="None" ResizeMode="CanMinimize"
+       
+        Title="TransparentChromeWindow" Height="450" Width="800">
+    <WindowChrome.WindowChrome>
+        <WindowChrome GlassFrameThickness="-1" />
+    </WindowChrome.WindowChrome>
+    <Window.Template>
+        <!--这篇文章说 使用AllowTransparent会严重影响性能-->
+        <ControlTemplate TargetType="Window">
+            <Border Padding="30" Background="Transparent">
+                <Border CornerRadius="16" Background="White">
+                    <Border.Effect>
+                        <DropShadowEffect BlurRadius="40" Color="Black" Direction="315"  ShadowDepth="8" Opacity="0.15"/>
+                    </Border.Effect>
+                    <ContentPresenter ClipToBounds="True" />
+                </Border>
+            </Border>
+        </ControlTemplate>
+    </Window.Template>
+    <Grid>
+        <TextBlock FontSize="20" Foreground="#0083d0"
+                   TextAlignment="Center" VerticalAlignment="Center">
+            <!--https://blog.walterlv.com/post/wpf-transparent-window-without-allows-transparency.html#%E5%8A%9F%E8%83%BD%E5%AF%B9%E6%AF%94-->
+                <Run Text="欢迎" FontWeight="Black" />
+                <LineBreak />
+                <Run Text="blog.walterlv.com" FontSize="18" FontWeight="Light" />
+        </TextBlock>
+    </Grid>
+</Window>

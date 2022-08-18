@@ -3,10 +3,15 @@ using Prism.Mvvm;
 using Serilog;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WPFProgramEffect.Service;
+using Prism.Ioc;
+using WPFProgramEffect.Views;
+using System.Windows;
+using ControlzEx.Theming;
 
 namespace WPFProgramEffect
 {
@@ -19,13 +24,15 @@ namespace WPFProgramEffect
     {
         private ILogger _logger;
         private ICourseService _courseService;
+        private IContainerProvider _container;
 
-        public MainWindowViewModel(ILogger logger, ICourseService courseService)
+        public MainWindowViewModel(ILogger logger, ICourseService courseService, IContainerExtension container)
         {
             title = "有效使用WPF编程";
 
             _logger = logger;
             _courseService = courseService;
+            _container = container;
         }
 
         private string title;
@@ -35,19 +42,77 @@ namespace WPFProgramEffect
             set { SetProperty(ref title, value); }
         }
 
+        private string themeName;
+        public string ThemeName
+        {
+            get { return themeName; }
+            set { SetProperty(ref themeName, value); }
+        }
 
         /// <summary>
         /// 通过绑定事件触发器
         /// xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
         /// i:Interaction.Triggers 来实现，
         /// </summary>
-        private DelegateCommand loaded;
-        public DelegateCommand OnLoaded =>
-            loaded ?? (loaded = new DelegateCommand(ExecuteOnLoaded));
-        void ExecuteOnLoaded()
+        private DelegateCommand<object> loaded;
+        public DelegateCommand<object> OnLoaded =>
+            loaded ?? (loaded = new DelegateCommand<object>(ExecuteOnLoaded));
+        void ExecuteOnLoaded(object sender)
         {
-            _logger.Information("Onloaded");
+            _logger.Information($"{(sender as Window)?.Title} Onloaded");
         }
-        
+
+        private DelegateCommand<object> openWindow;
+        public DelegateCommand<object> OpenWindow =>
+            openWindow ?? (openWindow = new DelegateCommand<object>(ExecuteOpenWindow));
+
+        void ExecuteOpenWindow(object parameter)
+        {
+            //param button
+            //直接创建就可以了
+            var window = _container.Resolve<TransparentWindow>();
+            window.Show();
+
+        }
+        //需要安装Prism Template pack扩展
+        //使用cmdg提示
+        //使用propp属性提示
+        //修改名称，相关自动修改
+
+        private DelegateCommand<object> openChromeWindow;
+        public DelegateCommand<object> OpenChromeWindow =>
+            openChromeWindow ?? (openChromeWindow = new DelegateCommand<object>(ExecuteOpenChromeWindow));
+
+        void ExecuteOpenChromeWindow(object parameter)
+        {
+            //parameter window
+            var window = _container.Resolve<TransparentChromeWindow>();
+            window.Show();
+        }
+
+        private DelegateCommand<object> selectedTheme;
+        public DelegateCommand<object> SelectedTheme =>
+            selectedTheme ?? (selectedTheme = new DelegateCommand<object>(ExecuteSelectedTheme));
+
+        void ExecuteSelectedTheme(object value)
+        {
+            if (value == null)
+            {
+                return;
+            }
+            //"Red", "Green", "Blue", "Purple", "Orange", "Lime", "Emerald",
+            //"Teal", "Cyan", "Cobalt", "Indigo", "Violet", "Pink", "Magenta",
+            //"Crimson", "Amber", "Yellow", "Brown", "Olive", "Steel", "Mauve", "Taupe", "Sienna"
+            try
+            {
+                //切换主题
+                //ThemeManager.Current.ChangeTheme(App.Current, $"Dark.{value.ToString()}");
+                ThemeManager.Current.ChangeTheme(App.Current, $"Light.{value.ToString()}");
+            }
+            catch (Exception ex)
+            {
+                _logger.Error(ex,"");
+            }
+        }
     }
 }
