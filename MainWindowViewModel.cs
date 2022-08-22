@@ -105,6 +105,8 @@ namespace WPFProgramEffect
             //"Crimson", "Amber", "Yellow", "Brown", "Olive", "Steel", "Mauve", "Taupe", "Sienna"
             try
             {
+                //主题帮助文档
+                //https://mahapps.com/docs/themes/thememanager
                 //切换主题
                 //ThemeManager.Current.ChangeTheme(App.Current, $"Dark.{value.ToString()}");
                 ThemeManager.Current.ChangeTheme(App.Current, $"Light.{value.ToString()}");
@@ -113,6 +115,17 @@ namespace WPFProgramEffect
             {
                 _logger.Error(ex,"");
             }
+        }
+
+
+        private DelegateCommand<object> showMahAppWindow;
+        public DelegateCommand<object> ShowMahAppWindow =>
+            showMahAppWindow ?? (showMahAppWindow = new DelegateCommand<object>(ExecuteShowMahAppWindow));
+
+        void ExecuteShowMahAppWindow(object parameter)
+        {
+            var window = _container.Resolve<MahAppWindow>();
+            window.Show();
         }
     }
 }

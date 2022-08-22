@@ -1,5 +1,6 @@
 ﻿using Prism.DryIoc;
 using Prism.Ioc;
+using Prism.Mvvm;
 using Serilog;
 using Serilog.Sinks.File;
 using System;
@@ -10,6 +11,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using WPFProgramEffect.Service;
+using WPFProgramEffect.ViewModels;
 using WPFProgramEffect.Views;
 
 namespace WPFProgramEffect
@@ -90,6 +92,9 @@ namespace WPFProgramEffect
 
             containerRegistry.Register<TransparentWindow>();
             containerRegistry.Register<TransparentChromeWindow>();
+            containerRegistry.Register<MahAppWindow>();
+
+            //ViewModelLocationProvider.Register<MahAppWindow, MahAppWindowViewModel>();
         }
 
         protected override Window CreateShell()

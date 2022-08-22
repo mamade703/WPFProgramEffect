@@ -46,6 +46,11 @@
                     <MenuItem Header="删除(_D)"></MenuItem>
                 </MenuItem>
             </Menu>
+            <Menu>
+                <MenuItem Header="Tool(_T)">
+                    <MenuItem Header="MahApps.Metro(_M)" Command="{Binding ShowMahAppWindow}"></MenuItem>
+                </MenuItem>
+            </Menu>
         </StackPanel>
         
         <DockPanel Grid.Row="1">
@@ -80,7 +85,6 @@
                     <Button Command="Paste" Content="Paste" />
                 </ToolBar>
             </ToolBarTray>
-            
         </DockPanel>
         <Grid Grid.Row="2">
             <Grid.RowDefinitions>

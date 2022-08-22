@@ -8,7 +8,8 @@
        
         WindowStyle="None" ResizeMode="CanMinimize"
        
-        Title="TransparentChromeWindow" Height="450" Width="800">
+        Title="TransparentChromeWindow" Height="450" Width="800"
+        >
     <WindowChrome.WindowChrome>
         <WindowChrome GlassFrameThickness="-1" />
     </WindowChrome.WindowChrome>

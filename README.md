@@ -4,7 +4,7 @@ WPF 项目中使用的各种有效的开源库
 
 方便快速有效使用WPF进行桌面端的开发
 
-使用到的技术及地址
+使用到的技术及地址，排名无先后，感谢这些贡献者。
 
 ## MahApps.Metro
 
@@ -13,6 +13,14 @@ WPF 项目中使用的各种有效的开源库
 [MahApps.Metro 项目地址](https://github.com/MahApps/MahApps.Metro)  
 [MahApps.Metro 快速开始](https://mahapps.com/docs/guides/quick-start)  
 [MahApps.Metro 使用手册](https://mahapps.com/docs/controls/HamburgerMenu)  
+
+## MaterialDesignInXamlToolkit
+
+MaterialDesign 是一种风格说明，这个项目是WPF下的一种实现
+
+[MaterialDesignInXamlToolkit 项目地址](https://github.com/MaterialDesignInXAML/MaterialDesignInXamlToolkit)  
+[MaterialDesignInXamlToolkit 快速开始](https://github.com/MaterialDesignInXAML/MaterialDesignInXamlToolkit/wiki/Super-Quick-Start)  
+[MaterialDesign 风格说明](https://material.io/design)  
 
 ## Prism
 
@@ -53,3 +61,20 @@ WpfAnimatedGif.在WPF中播放gif图标
 
 [WpfAnimatedGif 项目地址](https://github.com/XamlAnimatedGif/WpfAnimatedGif)  
 [WpfAnimatedGif 快速开始](https://github.com/XamlAnimatedGif/WpfAnimatedGif)
+
+## WPFToolkit  
+
+wpf一些特殊控件，以前在项目中使用过
+目前3.7.0及之后商业授权
+3.6.0 以后免费使用
+
+[WPFToolkit 项目地址](https://github.com/xceedsoftware/wpftoolkit/tree/3.6.0)  
+[WPFToolkit 快速开始](https://github.com/xceedsoftware/wpftoolkit/wiki)
+
+## Dragablz  
+
+Tearable tab control for WPF, which includes docking, tool windows and MDI
+
+[Dragablz 项目地址](https://github.com/ButchersBoy/Dragablz)  
+[Dragablz 快速开始](https://dragablz.net/2014/11/18/getting-started-with-dragablz-tabablzcontrol/)
+[Dragablz 使用手册](https://dragablz.net/)
