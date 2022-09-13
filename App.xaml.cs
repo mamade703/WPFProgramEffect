@@ -8,11 +8,13 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using System.Windows;
 using WPFProgramEffect.Service;
 using WPFProgramEffect.ViewModels;
 using WPFProgramEffect.Views;
+using WPFProgramEffect.ViewUI;
 
 namespace WPFProgramEffect
 {
@@ -94,12 +96,26 @@ namespace WPFProgramEffect
             containerRegistry.Register<TransparentChromeWindow>();
             containerRegistry.Register<MahAppWindow>();
 
-            //ViewModelLocationProvider.Register<MahAppWindow, MahAppWindowViewModel>();
+            containerRegistry.Register<PrismWindow>();
+
+            //View和ViewModel自动关联
+            //xmlns: prism = "http://prismlibrary.com/"
+            //prism: ViewModelLocator.AutoWireViewModel = "True"
+            //1.如果不在有效的命名空间下(相同的或者ViewModel下的)，需要指定ViewModel
+
+            containerRegistry.RegisterForNavigation<TeacherView, TeacherViewModel>();
+            containerRegistry.RegisterForNavigation<HelperView>();
+            
+            //2.或者用下面的语句做关联
+            //ViewModelLocationProvider.Register<TeacherView, TeacherViewModel>();
         }
 
-        protected override Window CreateShell()
+        protected override  Window CreateShell()
         {
             return Container.Resolve<MainWindow>();
         }
+
+
+        
     }
 }

@@ -24,6 +24,8 @@
                  BorderBrush="Gray"
                  WindowStartupLocation="CenterScreen"
                  
+                 FlyoutOverlayBrush="Red"
+                 
                  OverrideDefaultWindowCommandsBrush="White"
                  RightWindowCommandsOverlayBehavior ="HiddenTitleBar"
                  LeftWindowCommandsOverlayBehavior="HiddenTitleBar"

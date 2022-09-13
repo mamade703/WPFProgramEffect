@@ -1,0 +1,2 @@
+﻿ Microsoft.Win32.SystemEvents.DisplaySettingsChanged += SystemEvents_DisplaySettingsChanged;
+ https://www.cnblogs.com/ives/p/15385290.html

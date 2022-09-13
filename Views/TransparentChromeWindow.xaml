@@ -30,6 +30,7 @@
         <TextBlock FontSize="20" Foreground="#0083d0"
                    TextAlignment="Center" VerticalAlignment="Center">
             <!--https://blog.walterlv.com/post/wpf-transparent-window-without-allows-transparency.html#%E5%8A%9F%E8%83%BD%E5%AF%B9%E6%AF%94-->
+            <!--https://blog.csdn.net/WPwalter/article/details/81121829-->
                 <Run Text="欢迎" FontWeight="Black" />
                 <LineBreak />
                 <Run Text="blog.walterlv.com" FontSize="18" FontWeight="Light" />

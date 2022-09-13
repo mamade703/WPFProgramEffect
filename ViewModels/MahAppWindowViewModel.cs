@@ -21,7 +21,7 @@ namespace WPFProgramEffect.ViewModels
 
         void ExecuteShowMessage(object parameter)
         {
-
+           
         }
 
     }

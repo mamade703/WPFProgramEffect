@@ -1,0 +1,48 @@
+﻿<Window x:Class="WPFProgramEffect.Views.PrismWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFProgramEffect.Views"
+        xmlns:app="clr-namespace:WPFProgramEffect"
+        xmlns:prism="http://prismlibrary.com/"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        mc:Ignorable="d"
+        Title="PrismWindow" Height="450" Width="800">
+    <Window.Resources>
+        <!--必须要设置Header 才能显示出来选项卡！DataContext.Title -->
+        <Style TargetType="TabItem">
+            <Setter Property="Header" Value="{Binding DataContext.Title}" />
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="389*"/>
+        </Grid.RowDefinitions>
+        <StackPanel VerticalAlignment="Center" Grid.Column="0" Orientation="Horizontal" >
+            <TextBlock VerticalAlignment="Center">Normal Navigation :</TextBlock>
+            <Button Command="{Binding NormalNavigateCommand}" CommandParameter="TeacherView">Teacher</Button>
+            <Button Command="{Binding NormalNavigateCommand}" CommandParameter="HelperView">Helper</Button>
+        </StackPanel>
+        <ContentControl Grid.Row="1" Background="Gray"
+                        prism:RegionManager.RegionName="{x:Static app:AppModule.PrismWindowRegionLeft}" ></ContentControl>
+        
+        <StackPanel VerticalAlignment="Center" Grid.Column="1" Orientation="Horizontal" >
+            <TextBlock VerticalAlignment="Center">TabControl :</TextBlock>
+            <Button Command="{Binding AddNavigateCommand}" CommandParameter="TeacherView">Add Teacher</Button>
+            <Button Command="{Binding AddNavigateCommand}" CommandParameter="HelperView">Add Helper</Button>
+        </StackPanel>
+        
+        <!--也可以通过绑定到ItemsSource到TabControl 
+        https://www.cnblogs.com/hicolin/p/8742693.html
+        -->
+        <TabControl Grid.Row="1" Grid.Column="1" 
+                    prism:RegionManager.RegionName="{x:Static app:AppModule.PrismWindowRegionRight}" 
+                    Margin="5"  />
+    </Grid>
+</Window>

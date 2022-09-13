@@ -12,6 +12,8 @@ using Prism.Ioc;
 using WPFProgramEffect.Views;
 using System.Windows;
 using ControlzEx.Theming;
+using Prism.Regions;
+using WPFProgramEffect.ViewModels;
 
 namespace WPFProgramEffect
 {
@@ -25,14 +27,18 @@ namespace WPFProgramEffect
         private ILogger _logger;
         private ICourseService _courseService;
         private IContainerProvider _container;
+        private IRegionManager _regionMgr;
 
-        public MainWindowViewModel(ILogger logger, ICourseService courseService, IContainerExtension container)
+        public MainWindowViewModel(ILogger logger, ICourseService courseService, IContainerExtension container,
+            IRegionManager regionMgr)
         {
             title = "有效使用WPF编程";
 
             _logger = logger;
             _courseService = courseService;
             _container = container;
+
+            _regionMgr = regionMgr;
         }
 
         private string title;
@@ -125,6 +131,47 @@ namespace WPFProgramEffect
         void ExecuteShowMahAppWindow(object parameter)
         {
             var window = _container.Resolve<MahAppWindow>();
+            window.Show();
+        }
+
+        private DelegateCommand<object> showDragable;
+        public DelegateCommand<object> ShowDragable =>
+            showDragable ?? (showDragable = new DelegateCommand<object>(ExecuteShowDragable));
+
+        void ExecuteShowDragable(object parameter)
+        {
+            //怎么直接到容器里去的?
+            var window = _container.Resolve<DragableWindow>();
+            window.Show();
+        }
+
+        private DelegateCommand<object> showPrismCommand;
+        public DelegateCommand<object> ShowPrismCommand =>
+            showPrismCommand ?? (showPrismCommand = new DelegateCommand<object>(ExecuteShowPrismCommand));
+
+        void ExecuteShowPrismCommand(object parameter)
+        {
+            var window = _container.Resolve<PrismWindow>();
+
+            //!子窗口需要设置区域管理器
+            //是为了防止和程序冲突？
+            //https://www.csharpcodi.com/csharp-examples/Prism.Regions.RegionManager.SetRegionManager(System.Windows.DependencyObject,%20Prism.Regions.IRegionManager)/
+            var prismWndRegionMgr = _regionMgr.CreateRegionManager();
+            RegionManager.SetRegionManager(window, prismWndRegionMgr);
+            RegionManager.UpdateRegions();
+
+            //有点别扭，直接用系统中的_regionMgr 
+            var prismVM = window.DataContext as PrismWindowViewModel;
+            if (prismVM != null)
+            {
+                prismVM.MyRegionManager = prismWndRegionMgr;
+            }
+
+            //直接用这个即可，把区域的名称设置的有规则些
+            //RegionManager.SetRegionManager(window, _regionMgr);
+
+
+
             window.Show();
         }
     }

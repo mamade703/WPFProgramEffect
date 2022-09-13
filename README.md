@@ -78,3 +78,25 @@ Tearable tab control for WPF, which includes docking, tool windows and MDI
 [Dragablz 项目地址](https://github.com/ButchersBoy/Dragablz)  
 [Dragablz 快速开始](https://dragablz.net/2014/11/18/getting-started-with-dragablz-tabablzcontrol/)
 [Dragablz 使用手册](https://dragablz.net/)
+
+
+## XamlFlair  
+
+The goal of the XamlFlair library is to ease the implementation of common animations and allow a developer to easily add a single or combined set of animations with just a few lines of Xaml.
+
+[XamlFlair 项目地址](https://github.com/XamlFlair/XamlFlair)  
+
+
+## CalcBinding  
+
+可以在Xaml使用表达式计算，减少Converter的编写，减少ViewModel的代码，非常赞。
+表达式用  
+
+``` C#
+<Button Background="{c:Binding '(A > B ? media:Brushes.LightBlue : media:Brushes.White)'}"/>
+```
+
+[CalcBinding 项目地址](https://github.com/Alex141/CalcBinding)  
+
+
+CefSharp,DirectX
