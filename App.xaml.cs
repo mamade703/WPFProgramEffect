@@ -48,7 +48,15 @@ namespace WPFProgramEffect
             _logger.Debug("a dividing b {a} by {b}", a, b);
 
             var obj = new { Name = "刘", Role = ".net " };
-            _logger.Debug("输出{@obj}",obj);
+            var obj2 = new { Name = "王", Role = ".net " };
+
+            _logger.Debug("输出{obj} {Elapsed} ms", obj);
+            _logger.Debug("输出{obj1} {Elapsed} ms", obj);
+
+            //{属于占位} 输出顺序按照后边的参数顺序来。
+            //使用@ 表明使用Json格式输出
+            //{好记住}
+            _logger.Debug("输出{@obj2} {{@obj}} {Elapsed} ms", obj, obj2);
 
             this.ShutdownMode = ShutdownMode.OnMainWindowClose;
 

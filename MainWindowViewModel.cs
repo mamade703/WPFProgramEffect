@@ -174,5 +174,16 @@ namespace WPFProgramEffect
 
             window.Show();
         }
+
+        private DelegateCommand<object> showControlsCommand; 
+        public DelegateCommand<object> ShowControlsCommand =>
+            showControlsCommand ?? (showControlsCommand = new DelegateCommand<object>(ExecuteshowControlsCommand));
+
+        void ExecuteshowControlsCommand(object parameter)
+        {
+            //怎么直接到容器里去的?
+            var window = _container.Resolve<ControlsWindow>();
+            window.Show();
+        }
     }
 }

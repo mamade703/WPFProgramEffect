@@ -51,6 +51,7 @@
                     <MenuItem Header="MahApps.Metro(_M)" Command="{Binding ShowMahAppWindow}"></MenuItem>
                     <MenuItem Header="Dragablz(_D)" Command="{Binding ShowDragable}"></MenuItem>
                     <MenuItem Header="Prism(_D)" Command="{Binding ShowPrismCommand}"></MenuItem>
+                    <MenuItem Header="Controls(_D)" Command="{Binding ShowControlsCommand}"></MenuItem>
                 </MenuItem>
             </Menu>
         </StackPanel>

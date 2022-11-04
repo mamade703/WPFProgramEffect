@@ -144,10 +144,14 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="AppModule.cs" />
+    <Compile Include="Controls\ImageButton.cs" />
     <Compile Include="Model\Course.cs" />
     <Compile Include="Service\CourseService.cs" />
     <Compile Include="Service\ICourse.cs" />
     <Compile Include="ViewModels\PrismWindowViewModel.cs" />
+    <Compile Include="Views\ControlsWindow.xaml.cs">
+      <DependentUpon>ControlsWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewUI\HelperView.xaml.cs">
       <DependentUpon>HelperView.xaml</DependentUpon>
     </Compile>
@@ -172,6 +176,9 @@
       <DependentUpon>TransparentWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewUI\TeacherViewModel.cs" />
+    <Page Include="DictionaryImageButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MahApps\MahMainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -191,6 +198,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\ControlsWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ViewUI\HelperView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -273,6 +284,17 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="TempFile.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\btn-collapse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\buttonNormal.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image\buttonDisable.png" />
+    <Resource Include="Image\buttonHover.png" />
+    <Resource Include="Image\buttonPress.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
