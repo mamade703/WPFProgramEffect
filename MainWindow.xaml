@@ -52,6 +52,8 @@
                     <MenuItem Header="Dragablz(_D)" Command="{Binding ShowDragable}"></MenuItem>
                     <MenuItem Header="Prism(_D)" Command="{Binding ShowPrismCommand}"></MenuItem>
                     <MenuItem Header="Controls(_D)" Command="{Binding ShowControlsCommand}"></MenuItem>
+                    <MenuItem Header="Images(_D)" Command="{Binding ShowImagesCommand}"></MenuItem>
+
                 </MenuItem>
             </Menu>
         </StackPanel>

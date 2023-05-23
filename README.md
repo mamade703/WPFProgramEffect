@@ -99,4 +99,14 @@ The goal of the XamlFlair library is to ease the implementation of common animat
 [CalcBinding 项目地址](https://github.com/Alex141/CalcBinding)  
 
 
+## ImageProcessor  
+
+ImageProcessor,有时候需要根据手机里的exif信息来展示图片
+exif来指示图片怎么显示正确的，比如方向，需要旋转才能显示正确！ImageProcessor
+不支持net 5和 .net core
+
+[ImageProcessor 项目地址](https://github.com/JimBobSquarePants/ImageProcessor)  
+[ImageProcessor 快速开始](https://imageprocessor.org/)  
+
+
 CefSharp,DirectX

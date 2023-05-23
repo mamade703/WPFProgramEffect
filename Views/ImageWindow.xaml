@@ -1,0 +1,19 @@
+﻿<Window x:Class="WPFProgramEffect.Views.ImageWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFProgramEffect.Views"
+        mc:Ignorable="d" Loaded="Window_Loaded"
+        Title="ImageWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="379*"/>
+        </Grid.RowDefinitions>
+        <TextBlock>
+            图片处理的一些框架，如果图片待有exif信息，尤其是有旋转的，通过图片处理工具，把图片调正，然后保存
+        </TextBlock>
+        <WrapPanel Name="wrapPannel" Grid.Row="1" Grid.RowSpan="1"></WrapPanel>
+    </Grid>
+</Window>

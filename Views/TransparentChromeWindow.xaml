@@ -14,7 +14,9 @@
         <WindowChrome GlassFrameThickness="-1" />
     </WindowChrome.WindowChrome>
     <Window.Template>
-        <!--这篇文章说 使用AllowTransparent会严重影响性能-->
+        <!--这篇文章说 使用AllowTransparent会严重影响性能
+        但是在Win7 无显卡支持的Aero上会变黑，还是需要设置透明
+        通过一个函数来判断是否需要透明窗体？-->
         <ControlTemplate TargetType="Window">
             <Border Padding="30" Background="Transparent">
                 <Border CornerRadius="16" Background="White">
