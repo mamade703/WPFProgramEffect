@@ -196,5 +196,16 @@ namespace WPFProgramEffect
             var window = _container.Resolve<ImageWindow>();
             window.Show();
         }
+
+        private DelegateCommand<object> showFontsCommand;
+        public DelegateCommand<object> ShowFontsCommand =>
+            showFontsCommand ?? (showFontsCommand = new DelegateCommand<object>(ExecuteshowFontCommand));
+
+        void ExecuteshowFontCommand(object parameter)
+        {
+            //怎么直接到容器里去的?
+            var window = _container.Resolve<FontWindow>();
+            window.Show();
+        }
     }
 }

@@ -53,6 +53,7 @@
                     <MenuItem Header="Prism(_D)" Command="{Binding ShowPrismCommand}"></MenuItem>
                     <MenuItem Header="Controls(_D)" Command="{Binding ShowControlsCommand}"></MenuItem>
                     <MenuItem Header="Images(_D)" Command="{Binding ShowImagesCommand}"></MenuItem>
+                    <MenuItem Header="Fonts(_F)" Command="{Binding ShowFontsCommand}"></MenuItem>
 
                 </MenuItem>
             </Menu>
@@ -109,6 +110,8 @@
                 <svgc:SvgCanvas Width="100" Height="100"   Source="../image/message.svg"/>
                 <Image Source="{svgc:SvgImage  ../image/message.svg}"/>
                 <svgc:SvgViewbox Source="pack://application:,,,/Image/message.svg"/>
+                <Image Source="{svgc:SvgImage  http://school.necibook.com/public_static/console/assets/teaching/resourceIcon/resource-icon-pk.svg}"/>
+
             </StackPanel>
 
             <!--比较吃内存 下面4副图 456M-->

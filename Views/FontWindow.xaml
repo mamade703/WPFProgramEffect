@@ -1,0 +1,32 @@
+﻿<Window x:Class="WPFProgramEffect.Views.FontWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPFProgramEffect.Views"
+        mc:Ignorable="d"
+        Title="FontWindow" Height="450" Width="800">
+    <Grid>
+        <!--引入自定义字体文件
+        1.不认识的字体，和文字是是方块
+        2.注意文件名和字体名，字体名是用记事本打开里边的名称 /Fonts/Segoe.ttf#Segoe Fluent Icons
+        3.方便的可以定义资源和TextBlock样式
+        4.不要Key全局的样式-->
+        <StackPanel >
+            <TextBlock Text="2测试字体文件2" FontFamily="pack://application:,,,/WPFProgramEffect;component/Fonts/Segoe Fluent Icons">
+                
+            </TextBlock>
+            <TextBlock Text="测试字体文件"></TextBlock>
+
+            <TextBlock Text="测试字体文件" FontFamily="Segoe MDL2 Assets"></TextBlock>
+            <TextBlock Text="&#xE702;"></TextBlock>
+            <TextBlock Text="测试字体文件" FontFamily="{StaticResource SegoeFont}"></TextBlock>
+            <TextBlock Text="测试字体文件"></TextBlock>
+
+            <TextBlock Text="测试字体文件" Style="{StaticResource textblockFontStyle}"></TextBlock>
+
+            <TextBlock Text="&#xf0321;"></TextBlock>
+            
+        </StackPanel>
+    </Grid>
+</Window>
